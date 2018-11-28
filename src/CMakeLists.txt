@@ -1,0 +1,5 @@
+aux_source_directory(. SOURCES)
+add_library(alisign ${SOURCES})
+target_link_libraries(alisign ${OPENSSL_LIBRARIES} luajit-5.1)
+set_target_properties(alisign PROPERTIES PREFIX "" SUFFIX ".so")
+install(TARGETS alisign DESTINATION ${LUAJIT_ROOT_DIR}/lib/lua/5.1)
